@@ -1,0 +1,55 @@
+linters:
+  # Запрет на пропуск закрывающих тегов
+  MissingCloseTag:
+    enabled: true
+
+  # Проверка регистра тегов (нижний регистр)
+  TagCase:
+    enabled: true
+    style: lowercase
+
+  # Проверка регистра атрибутов (нижний регистр с дефисами)
+  AttributeCase:
+    enabled: true
+    style: lowercase_with_hyphens
+
+  # Проверка длины строки
+  LineLength:
+    enabled: true
+    max: 120 # Максимальная длина строки
+
+  # Запрет на использование inline-стилей
+  InlineStyles:
+    enabled: true
+
+  # Запрет на использование устаревших HTML-атрибутов
+  DeprecatedAttributes:
+    enabled: true
+
+  # Запрет на использование устаревших HTML-тегов
+  DeprecatedTags:
+    enabled: true
+
+  # Проверка на отсутствие пробелов вокруг знака "=" в атрибутах
+  SpaceAroundAttributeEquals:
+    enabled: true
+    style: no_space
+
+  # Проверка на отсутствие пробелов внутри фигурных скобок для встроенного Ruby-кода
+  SpaceInsideRubyInterpolation:
+    enabled: true
+    style: no_space
+
+  # Запрет на использование пробелов в конце строки
+  TrailingWhitespace:
+    enabled: true
+
+  # Проверка на отсутствие лишних пустых строк
+  EmptyLines:
+    enabled: true
+    max: 1 # Максимальное количество пустых строк подряд
+
+  # Запрет на использование самозакрывающихся тегов (кроме void-элементов)
+  SelfClosingTag:
+    enabled: true
+    ignore_void_elements: true # Игнорировать void-элементы (например, <img />, <br />)
