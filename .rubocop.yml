@@ -15,54 +15,63 @@ AllCops:
     - "public/**/*"
 
 Layout/LineLength:
-  Max: 120
+  Max: 120 # Максимальная длина строки
 
 Style/Documentation:
-  Enabled: false
+  Enabled: false # Отключить проверку документации (по умолчанию в Ruby Style Guide)
+
+Style/FrozenStringLiteralComment:
+  Enabled: true # Использование frozen_string_literal
 
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  EnforcedStyle: single_quotes # Использовать одинарные кавычки для строк
 
 Style/SymbolArray:
-  EnforcedStyle: brackets
+  EnforcedStyle: brackets # Использовать %i[] для массивов символов
 
 Style/WordArray:
-  EnforcedStyle: brackets
+  EnforcedStyle: brackets # Использовать %w[] для массивов строк
 
+# Настройки, соответствующие Rails Style Guide
 Rails:
   Enabled: true
 
 Rails/ApplicationRecord:
-  Enabled: true
+  Enabled: true # Требовать наследование от ApplicationRecord для моделей
 
 Rails/TimeZone:
-  Enabled: true
+  Enabled: true # Использовать Time.zone вместо Time.now
 
 Rails/OutputSafety:
-  Enabled: true
+  Enabled: true # Проверять безопасность вывода HTML
 
 Rails/HelperInstanceVariable:
-  Enabled: true
+  Enabled: true # Запрещать использование инстанс-переменных в хелперах
 
 Rails/FilePath:
-  Enabled: true
+  Enabled: true # Использовать Rails.root.join для работы с путями
 
 Rails/UniqueValidationWithoutIndex:
-  Enabled: true
+  Enabled: true # Проверять наличие индексов для уникальных валидаций
 
+# Дополнительные настройки
 Metrics/AbcSize:
-  Max: 20
+  Max: 20 # Максимальная сложность метода
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 15 # Максимальная длина метода
 
 Metrics/ClassLength:
-  Max: 150
+  Max: 150 # Максимальная длина класса
+
+Metrics/BlockLength:
+  Max: 30 # Максимальная длина блока
+  Exclude:
+    - "spec/**/*" # Исключить тесты
 
 Style/ClassAndModuleChildren:
-  EnforcedStyle: nested
+  EnforcedStyle: nested # Использовать вложенные классы и модули
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    default: '[]'
-
+    default: '[]' # Использовать квадратные скобки для %-литералов
