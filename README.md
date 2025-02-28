@@ -1,24 +1,10 @@
-# README
+# Второе тестовое задание.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Условие задачи
 
-Things you may want to cover:
+Необходимо создать web-приложение "Персональный блог", реализующее следующие функции:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Администратор приложения может залогиниться
+* Администратор приложения может содавать, редактировать и удалять статьи
+* Гостевой пользователь должен видеть все статьи в сокращенном виде на главной странице
+* Гостевой пользователь может кликнуть на заголовок статьи и просмотреть полное содержание
