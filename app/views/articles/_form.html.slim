@@ -1,4 +1,4 @@
-  = simple_form_for @article, html: { class: 'shadow p-4 bg-white rounded' } do |f|
+  = simple_form_for @article do |f|
     .mb-4
       = f.input :title,
         input_html: { class: 'form-control form-control-lg' },
@@ -12,5 +12,7 @@
         wrapper_html: { class: 'form-group' },
         label_html: { class: 'form-label fs-5' }
 
-    .d-grid.mt-5
-      = f.button :submit, class: 'btn btn-primary btn-lg'
+    .d-flex.gap-3.mt-5
+      = f.button :submit, class: 'btn btn-primary btn-lg flex-grow-1'
+      - if controller.action_name == 'edit'
+        = link_to 'Back', article_path(@article), class: 'btn btn-outline-secondary btn-lg flex-grow-1'
