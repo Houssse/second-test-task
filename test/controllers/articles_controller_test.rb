@@ -15,7 +15,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     params = {
       article: {
         title: 'Test Article',
-        body: 'This is a test article.' }
+        body: Faker::Lorem.paragraph_by_chars(number: 300)
+      }
     }
 
     post(articles_path, params:)
@@ -28,7 +29,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     params = {
       article: {
         title: 'Updated Article',
-        body: 'This is an updated article.' }
+        body: Faker::Lorem.paragraph_by_chars(number: 300)
+      }
     }
 
     patch(article_path(@article), params:)
