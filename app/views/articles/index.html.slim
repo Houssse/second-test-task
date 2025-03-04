@@ -1,6 +1,9 @@
-h1 all articles
+  h1.mb-4 All Articles
 
-- @articles.each do |article|
-    = article.title
-    br
-    = article.body
+  .list-group
+    - @articles.each do |article|
+      .list-group-item.mb-3.shadow-sm
+        .d-flex.flex-column
+          h4.mb-2 = article.title
+          p.text-muted.mb-3 = truncate(article.body, length: 200, separator: ' ')
+          .align-self-end

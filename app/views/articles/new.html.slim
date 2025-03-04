@@ -1,0 +1,19 @@
+.container.mt-5
+  h1.mb-4.text-center New Article
+
+  = simple_form_for @article, html: { class: 'shadow p-4 bg-white rounded' } do |f|
+    .mb-4
+      = f.input :title,
+        input_html: { class: 'form-control form-control-lg' },
+        wrapper_html: { class: 'form-group' },
+        label_html: { class: 'form-label fs-5' }
+
+    .mb-4
+      = f.input :body,
+        as: :text,
+        input_html: { class: 'form-control', rows: 5 },
+        wrapper_html: { class: 'form-group' },
+        label_html: { class: 'form-label fs-5' }
+
+    .d-grid.mt-5
+      = f.button :submit, 'Create Article', class: 'btn btn-primary btn-lg'
