@@ -1,1 +1,8 @@
 ru:
+  articles:
+    create:
+      success: 'Статья успешно создана'
+    update:
+      success: 'Статья успешно обновлена'
+    destroy:
+      success: 'Статья успешно удалена'

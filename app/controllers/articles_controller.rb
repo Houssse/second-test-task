@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
 
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article
+      redirect_to @article, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
 
-    redirect_to root_path
+    redirect_to root_path, notice: t('.success')
   end
 
   private
