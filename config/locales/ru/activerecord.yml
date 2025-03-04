@@ -1,1 +1,13 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              too_short: 'слишком короткое название (минимум %{count} символа)'
+              too_long: 'слишком длинное название (максимум %{count} символов)'
+              blank: 'название не может быть пустым'
+      messages:
+        too_short: 'слишком короткоя статья (минимум %{count} символа)'
+        too_long: 'слишком длинная статья (максимум %{count} символов)'
