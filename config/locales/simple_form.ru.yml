@@ -1,0 +1,11 @@
+ru:
+  simple_form:
+    labels:
+      article:
+        title: 'Заголовок'
+        body: 'Статья'
+  helpers:
+    submit:
+      article:
+        create: 'Добавить статью'
+        update: 'Сохранить'

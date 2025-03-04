@@ -1,0 +1,7 @@
+ru:
+  shared:
+    navbar:
+      title: 'Персональный блог'
+      add_article: 'Добавить статью'
+      sign_in: 'Войти'
+      sign_out: 'Выйти'

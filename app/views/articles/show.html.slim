@@ -10,5 +10,5 @@
 
         .mt-4.d-flex.justify-content-between
           .btn-group
-            = link_to 'edit', edit_article_path, class: 'btn btn-warning'
-            = link_to 'delete', article_path, data: { turbo_method: :delete }, class: 'btn btn-danger'
+            = link_to t('.button.edit'), edit_article_path, class: 'btn btn-warning'
+            = link_to t('.button.delete'), article_path, data: { turbo_method: :delete }, class: 'btn btn-danger'

@@ -1,0 +1,12 @@
+ru:
+  articles:
+    index:
+      title: 'Все статьи'
+    show:
+      button:
+        edit: 'редактировать'
+        delete: 'удалить'
+    new:
+      title: 'Новая статья'
+    form:
+      back: 'Назад'

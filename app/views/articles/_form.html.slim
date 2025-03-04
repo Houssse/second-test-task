@@ -13,6 +13,6 @@
         label_html: { class: 'form-label fs-5' }
 
     .d-flex.gap-3.mt-5
-      = f.button :submit, class: 'btn btn-primary btn-lg flex-grow-1'
+      = f.submit class: 'btn btn-primary btn-lg flex-grow-1'
       - if controller.action_name == 'edit'
-        = link_to 'Back', article_path(@article), class: 'btn btn-outline-secondary btn-lg flex-grow-1'
+        = link_to t('.back'), article_path(@article), class: 'btn btn-outline-secondary btn-lg flex-grow-1'
