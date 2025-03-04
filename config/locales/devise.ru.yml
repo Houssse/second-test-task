@@ -4,7 +4,10 @@ ru:
       confirmed: "Ваш адрес электронной почты был успешно подтвержден."
       send_instructions: "В ближайшее время вы получите письмо с инструкциями по подтверждению адреса электронной почты."
       send_paranoid_instructions: "Если ваш адрес электронной почты существует в нашей базе данных, в ближайшее время вы получите письмо с инструкциями по его подтверждению."
-    failure:
+      new:
+        resend_confirmation_instructions: "Выслать повторно письмо с активацией"
+
+    failures:
       already_authenticated: "Вы уже вошли в систему."
       inactive: "Ваш аккаунт еще не активирован."
       invalid: "Неверный %{authentication_keys} или пароль."
@@ -14,26 +17,53 @@ ru:
       timeout: "Время вашей сессии истекло. Пожалуйста, войдите снова, чтобы продолжить."
       unauthenticated: "Вы должны войти в систему или зарегистрироваться, чтобы продолжить."
       unconfirmed: "Вы должны подтвердить адрес электронной почты, чтобы продолжить."
+
     mailer:
       confirmation_instructions:
         subject: "Инструкции по подтверждению"
+        action: "Активировать"
+        greeting: "Привет %{recipient}!"
+        instruction: "Вы можете активировать свою учетную запись, нажав ссылку снизу:"
+
       reset_password_instructions:
         subject: "Инструкции по сбросу пароля"
+        action: "Изменить пароль"
+        greeting: "Привет, %{recipient}!"
+        instruction: "Вы (или кто-то еще) запросили изменение пароля. Для изменение пароля нажимите ссылку ниже:"
+        instruction_2: "Если вы не запрашивали изменение пароля - проигнорируйте это сообщение"
+        instruction_3: "Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый."
+
       unlock_instructions:
         subject: "Инструкции по разблокировке"
+        action: "Разблокировать учетную запись"
+        greeting: "Привет, %{recipient}!"
+        instruction: "Нажмите ссылку для активации учетной записи:"
+        message: "Ваша учетная запись была заблокирована в связи с превышением лимита неудачных попыток входа."
+
       email_changed:
         subject: "Адрес электронной почты изменен"
       password_change:
         subject: "Пароль изменен"
+
     omniauth_callbacks:
       failure: "Не удалось аутентифицировать вас через %{kind} из-за ошибки: \"%{reason}\"."
       success: "Успешная аутентификация через %{kind} аккаунт."
+
     passwords:
       no_token: "Вы не можете получить доступ к этой странице без перехода из письма для сброса пароля. Если вы перешли из письма, убедитесь, что вы использовали полный URL."
       send_instructions: "В ближайшее время вы получите письмо с инструкциями по сбросу пароля."
       send_paranoid_instructions: "Если ваш адрес электронной почты существует в нашей базе данных, в ближайшее время вы получите ссылку для восстановления пароля."
       updated: "Ваш пароль успешно изменен. Теперь вы вошли в систему."
       updated_not_active: "Ваш пароль успешно изменен."
+      edit:
+        change_my_password: "Изменить мой пароль"
+        change_your_password: "Изменить пароль"
+        confirm_new_password: "Повторите новый пароль"
+        new_password: "Новый пароль"
+      new:
+        forgot_your_password: "Забыли пароль?"
+        send_me_reset_password_instructions: "Выслать новый пароль"
+
     registrations:
       destroyed: "До свидания! Ваш аккаунт был успешно удален. Надеемся увидеть вас снова."
       signed_up: "Добро пожаловать! Вы успешно зарегистрировались."
@@ -43,64 +73,6 @@ ru:
       update_needs_confirmation: "Вы успешно обновили свой аккаунт, но необходимо подтвердить новый адрес электронной почты. Пожалуйста, проверьте почту и перейдите по ссылке для подтверждения."
       updated: "Ваш аккаунт успешно обновлен."
       updated_but_not_signed_in: "Ваш аккаунт успешно обновлен, но так как пароль был изменен, вам нужно войти снова."
-    sessions:
-      signed_in: "Вы успешно вошли в систему."
-      signed_out: "Вы успешно вышли из системы."
-      already_signed_out: "Вы уже вышли из системы."
-    unlocks:
-      send_instructions: "В ближайшее время вы получите письмо с инструкциями по разблокировке аккаунта."
-      send_paranoid_instructions: "Если ваш аккаунт существует, в ближайшее время вы получите письмо с инструкциями по его разблокировке."
-      unlocked: "Ваш аккаунт успешно разблокирован. Пожалуйста, войдите в систему, чтобы продолжить."
-  errors:
-    messages:
-      already_confirmed: "уже был подтвержден, попробуйте войти в систему"
-      confirmation_period_expired: "должен быть подтвержден в течение %{period}, запросите новый"
-      expired: "истек, запросите новый"
-      not_found: "не найден"
-      not_locked: "не был заблокирован"
-      not_saved:
-        one: "1 ошибка не позволила сохранить %{resource}:"
-        other: "Ошибки не позволили сохранить %{resource}:"
-  activerecord:
-    attributes:
-      user:
-        current_password: "Текущий пароль"
-        email: Email
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
-        remember_me: "Запомнить меня"
-    models:
-      user: "Пользователь"
-  devise:
-    confirmations:
-      new:
-        resend_confirmation_instructions: "Выслать повторно письмо с активацией"
-    mailer:
-      confirmation_instructions:
-        action: "Активировать"
-        greeting: "Привет %{recipient}!"
-        instruction: "Вы можете активировать свою учетную запись, нажав ссылку снизу:"
-      reset_password_instructions:
-        action: "Изменить пароль"
-        greeting: "Привет, %{recipient}!"
-        instruction: "Вы (или кто-то еще) запросили изменение пароля. Для изменение пароля нажимите ссылку ниже:"
-        instruction_2: "Если вы не запрашивали изменение пароля - проигнорируйте это сообщение"
-        instruction_3: "Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый."
-      unlock_instructions:
-        action: "Разблокировать учетную запись"
-        greeting: "Привет, %{recipient}!"
-        instruction: "Нажмите ссылку для активации учетной записи:"
-        message: "Ваша учетная запись была заблокирована в связи с превышением лимита неудачных попыток входа."
-    passwords:
-      edit:
-        change_my_password: "Изменить мой пароль"
-        change_your_password: "Изменить пароль"
-        confirm_new_password: "Повторите новый пароль"
-        new_password: "Новый пароль"
-      new:
-        forgot_your_password: "Забыли пароль?"
-        send_me_reset_password_instructions: "Выслать новый пароль"
-    registrations:
       edit:
         are_you_sure: "Вы уверены?"
         cancel_my_account: "Удалить учетную запись"
@@ -112,9 +84,21 @@ ru:
         we_need_your_current_password_to_confirm_your_changes: "введите текущий пароль для подтверждения изменений"
       new:
         sign_up: "Регистрация"
+
     sessions:
+      signed_in: "Вы успешно вошли в систему."
+      signed_out: "Вы успешно вышли из системы."
+      already_signed_out: "Вы уже вышли из системы."
       new:
         sign_in: "Войти"
+
+    unlocks:
+      send_instructions: "В ближайшее время вы получите письмо с инструкциями по разблокировке аккаунта."
+      send_paranoid_instructions: "Если ваш аккаунт существует, в ближайшее время вы получите письмо с инструкциями по его разблокировке."
+      unlocked: "Ваш аккаунт успешно разблокирован. Пожалуйста, войдите в систему, чтобы продолжить."
+      new:
+        resend_unlock_instructions: "Выслать подтверждение заново"
+
     shared:
       links:
         back: "Назад"
@@ -124,6 +108,25 @@ ru:
         sign_in: "Войти"
         sign_in_with_provider: "Войти с помощью: %{provider}"
         sign_up: "Регистрация"
-    unlocks:
-      new:
-        resend_unlock_instructions: "Выслать подтверждение заново"
+
+  activerecord:
+    attributes:
+      user:
+        current_password: "Текущий пароль"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+    models:
+      user: "Пользователь"
+
+  errors:
+    messages:
+      already_confirmed: "уже был подтвержден, попробуйте войти в систему"
+      confirmation_period_expired: "должен быть подтвержден в течение %{period}, запросите новый"
+      expired: "истек, запросите новый"
+      not_found: "не найден"
+      not_locked: "не был заблокирован"
+      not_saved:
+        one: "1 ошибка не позволила сохранить %{resource}:"
+        other: "Ошибки не позволили сохранить %{resource}:"
