@@ -60,7 +60,7 @@ ru:
       not_locked: "не был заблокирован"
       not_saved:
         one: "1 ошибка не позволила сохранить %{resource}:"
-        other: "%{count} ошибок не позволили сохранить %{resource}:"
+        other: "Ошибки не позволили сохранить %{resource}:"
   activerecord:
     attributes:
       user:

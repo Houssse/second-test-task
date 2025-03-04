@@ -2,6 +2,12 @@ ru:
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              blank: 'не может быть пустым'
+            password:
+              blank: 'не может быть пустым'
         article:
           attributes:
             title:
@@ -11,3 +17,4 @@ ru:
       messages:
         too_short: 'слишком короткоя статья (минимум %{count} символа)'
         too_long: 'слишком длинная статья (максимум %{count} символов)'
+        blank: 'не может быть пустым'
