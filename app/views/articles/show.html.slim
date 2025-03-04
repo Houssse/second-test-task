@@ -1,0 +1,14 @@
+.container.mt-5
+  .row.justify-content-center
+    .col-md-8
+      .card.shadow
+        .card-header
+          h1.mb-0 = @article.title
+
+        .card-body
+          .article-content.fs-5
+            = simple_format(@article.body, class: 'mb-0')
+
+          .mt-4.d-flex.justify-content-between
+            = link_to 'Back', articles_path, class: 'btn btn-outline-secondary'
+            .btn-group
