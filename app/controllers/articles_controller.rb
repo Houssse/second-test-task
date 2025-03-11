@@ -8,7 +8,9 @@ class ArticlesController < ApplicationController
     @articles = Article.includes(:user)
   end
 
-  def show; end
+  def show
+    @like = current_user&.article_likes&.find_by(article_id: @article.id)
+  end
 
   def new
     @article = Article.new

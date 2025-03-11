@@ -3,7 +3,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :articles
+  resources :articles do
+    resources :likes, only: %i[create destroy]
+  end
 
   root 'articles#index'
 end
