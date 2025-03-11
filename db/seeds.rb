@@ -1,3 +1,9 @@
+Rails.logger.debug 'Очистка базы данных'
+
+Rake::Task['db:clean'].invoke
+
+Rails.logger.debug 'Заполнение базы данных...'
+
 @user = User.create!(email: 'admin@admin', password: Faker::Internet.password(min_length: 8))
 
 users = []
