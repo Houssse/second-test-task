@@ -12,12 +12,16 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    authorize @article
   end
 
-  def edit; end
+  def edit
+    authorize @article
+  end
 
   def create
     @article = Article.new(article_params)
+    authorize @article
     @article.user = current_user
 
     if @article.save
@@ -29,6 +33,7 @@ class ArticlesController < ApplicationController
 
 
   def update
+    authorize @article
     if @article.update(article_params)
       redirect_to @article, notice: t('.success')
     else
@@ -37,6 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.destroy
 
     redirect_to root_path, notice: t('.success')
