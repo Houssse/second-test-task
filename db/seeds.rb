@@ -1,9 +1,15 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+@user = User.create!(email: 'admin@admin', password: Faker::Internet.password(min_length: 8))
+
+users = []
+50.times do
+  users << User.create!(email: Faker::Internet.unique.email, password: Faker::Internet.password(min_length: 8))
+end
+
+15.times do
+  @article = @user.articles.create!(title: Faker::Book.title, body: Faker::Lorem.paragraph_by_chars(number: 300))
+
+  rand(1..50).times do
+    user = users.sample
+    ArticleLike.create!(article: @article, user: user) unless ArticleLike.exists?(article: @article, user: user)
+  end
+end
