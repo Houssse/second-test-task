@@ -4,8 +4,10 @@ one:
   title: MyString
   body: MyText
   user: one
+  likes_count: 1
 
 two:
   title: MyString
   body: MyText
   user: two
+  likes_count: 2
